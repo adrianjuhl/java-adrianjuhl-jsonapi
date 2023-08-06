@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.github.adrianjuhl</groupId>
+    <artifactId>adrianjuhl-parent</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <artifactId>adrianjuhl-jsonapi</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+
+  <name>adrianjuhl-jsonapi</name>
+  <description>A library for using JSON:API</description>
+  <url>https://github.com/adrianjuhl/java-adrianjuhl-jsonapi</url>
+  <inceptionYear>2023</inceptionYear>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>1</id>
+      <name>Adrian Juhl</name>
+      <email>adrian.juhl@gmail.com</email>
+      <url>https://github.com/adrianjuhl</url>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>Australia/Adelaide</timezone>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:github.com:adrianjuhl/java-adrianjuhl-jsonapi.git</connection>
+    <developerConnection>scm:git:github.com:adrianjuhl/java-adrianjuhl-jsonapi.git</developerConnection>
+    <url>https://github.com/adrianjuhl/java-adrianjuhl-jsonapi</url>
+  </scm>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
+  <properties>
+  </properties>
+
+  <dependencyManagement>
+  </dependencyManagement>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.10.0-M1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.10</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <!-- select non-aggregate reports -->
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <profiles>
+  </profiles>
+
+</project>
+
